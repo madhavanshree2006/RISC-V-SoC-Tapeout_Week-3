@@ -333,7 +333,7 @@ Why because the matching outputs between pre- and post-synthesis simulations mea
 
 📌  Pre-Synthesis output
 
-<p align="center"><img src="./ASSETS/19.pngg" width="700" alt="image 19"/></p>
+<p align="center"><img src="./ASSETS/19.png" width="700" alt="image 19"/></p>
 
 📌 Post-Synthesis output
 
@@ -572,7 +572,7 @@ VSDBabySoC/
 
 This separation makes debugging and file tracking much easier.
 
-<p align="center"><img src="./ASSETS/21.pngg" width="700" alt="image 21"/></p>
+<p align="center"><img src="./ASSETS/21.png" width="700" alt="image 21"/></p>
 
 ---
 
