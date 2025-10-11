@@ -133,7 +133,7 @@ yosys> read_liberty -lib src/lib/avsddac.lib
 yosys> read_liberty -lib src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 ```
 
-<p align="center"><img src="./ASSETS/3.jpeg" width="700" alt="image 3"/></p>
+<p align="center"><img src="./ASSETS/3.png" width="700" alt="image 3"/></p>
 
 ---
 
@@ -143,7 +143,7 @@ yosys> read_liberty -lib src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 yosys> synth -top vsdbabysoc
 ```
 
-<p align="center"><img src="./ASSETS/4.jpg" width="700" alt="image 4"/></p>
+<p align="center"><img src="./ASSETS/4.png" width="700" alt="image 4"/></p>
 
 ---
 
@@ -151,13 +151,13 @@ yosys> synth -top vsdbabysoc
 
 <p align="center"><img src="./ASSETS/5.png" width="700" alt="image 5"/></p>
 
-<p align="center"><img src="./ASSETS/6.jpg" width="700" alt="image 6"/></p>
+<p align="center"><img src="./ASSETS/6.png" width="700" alt="image 6"/></p>
 
-<p align="center"><img src="./ASSETS/7.gif" width="700" alt="image 7"/></p>
+<p align="center"><img src="./ASSETS/7.png" width="700" alt="image 7"/></p>
 
-<p align="center"><img src="./ASSETS/8.jpeg" width="700" alt="image 8"/></p>
+<p align="center"><img src="./ASSETS/8.png" width="700" alt="image 8"/></p>
 
-<p align="center"><img src="./ASSETS/9.jpeg" width="700" alt="image 9"/></p>
+<p align="center"><img src="./ASSETS/9.png" width="700" alt="image 9"/></p>
 
 ---
 
@@ -167,7 +167,7 @@ yosys> synth -top vsdbabysoc
 yosys> dfflibmap -liberty src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 ```
 
-<p align="center"><img src="./ASSETS/10.jpg" width="700" alt="image 10"/></p>
+<p align="center"><img src="./ASSETS/10.png" width="700" alt="image 10"/></p>
 
 ---
 
@@ -180,7 +180,7 @@ yosys> abc -liberty src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib -script +strash;sc
 
 <p align="center"><img src="./ASSETS/11.png" width="700" alt="image 11"/></p>
 
-<p align="center"><img src="./ASSETS/12.jpg" width="700" alt="image 12"/></p>
+<p align="center"><img src="./ASSETS/12.png" width="700" alt="image 12"/></p>
 
 ---
 
@@ -193,7 +193,7 @@ yosys> clean -purge
 yosys> rename -enumerate
 ```
 
-<p align="center"><img src="./ASSETS/13.gif" width="700" alt="image 13"/></p>
+<p align="center"><img src="./ASSETS/13.png" width="700" alt="image 13"/></p>
 
 ---
 
@@ -213,7 +213,7 @@ yosys> stat
 yosys> write_verilog -noattr output/post_synth_sim/vsdbabysoc.synth.v
 ```
 
-<p align="center"><img src="./ASSETS/15.jpg" width="700" alt="image 15"/></p>
+<p align="center"><img src="./ASSETS/15.pngg" width="700" alt="image 15"/></p>
 
 ✅ **Output:** `synth_netlist.v` – the synthesized gate-level version of our BabySoC core.
 
@@ -333,7 +333,7 @@ Why because the matching outputs between pre- and post-synthesis simulations mea
 
 📌  Pre-Synthesis output
 
-<p align="center"><img src="./ASSETS/19.jpg" width="700" alt="image 19"/></p>
+<p align="center"><img src="./ASSETS/19.pngg" width="700" alt="image 19"/></p>
 
 📌 Post-Synthesis output
 
@@ -572,7 +572,7 @@ VSDBabySoC/
 
 This separation makes debugging and file tracking much easier.
 
-<p align="center"><img src="./ASSETS/21.jpg" width="700" alt="image 21"/></p>
+<p align="center"><img src="./ASSETS/21.pngg" width="700" alt="image 21"/></p>
 
 ---
 
@@ -587,7 +587,7 @@ git clone https://github.com/parallaxsw/OpenSTA.git
 cd OpenSTA
 ```
 
-<p align="center"><img src="./ASSETS/22.jpeg" width="700" alt="image 22"/></p>
+<p align="center"><img src="./ASSETS/22.png" width="700" alt="image 22"/></p>
 
 **Step 2: Build the Docker Image**
 
@@ -597,7 +597,7 @@ docker build --file Dockerfile.ubuntu22.04 --tag opensta .
 
 This builds a Docker image named opensta using the provided Ubuntu 22.04 Dockerfile. All dependencies are installed during this step.
 
-<p align="center"><img src="./ASSETS/23.jpg" width="700" alt="image 23"/></p>
+<p align="center"><img src="./ASSETS/23.png" width="700" alt="image 23"/></p>
 
 <p align="center"><img src="./ASSETS/24.png" width="700" alt="image 24"/></p>
 
