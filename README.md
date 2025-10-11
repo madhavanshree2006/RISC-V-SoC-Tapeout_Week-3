@@ -298,7 +298,7 @@ Observe signal transitions, clock gating, and output behavior.
 
 ## 🔬 Step 5 – Result Analysis
 
-When you compare **pre- and post-synthesis waveforms** in GTKWave (`tb_mythcore_test.vcd` vs `tb_mythcore_test_post.vcd`):
+When you compare **pre- and post-synthesis waveforms** in GTKWave (`pre_synth_sim.vcd` vs `post_synth_sim.vcd`):
 
 - The **functional behavior** should be identical.
 - Slight **timing variations** may appear because the synthesized design includes gate delays.
@@ -312,9 +312,9 @@ When you compare **pre- and post-synthesis waveforms** in GTKWave (`tb_mythcore_
 
 | Stage | Tool | Output | Verification |
 | --- | --- | --- | --- |
-| RTL Simulation | Icarus Verilog | `tb_mythcore_test.vcd` | Functional correctness |
-| Synthesis | Yosys | `synth_netlist.v` | Logical equivalence |
-| Gate-Level Simulation | Icarus Verilog | `tb_mythcore_test_post.vcd` |  |
+| RTL Simulation | Icarus Verilog | `pre_synth_sim.vcd` | Functional correctness |
+| Synthesis | Yosys | `vsdbabysoc.synth.v.v` | Logical equivalence |
+| Gate-Level Simulation | Icarus Verilog | `post_synth_sim.vcd` |  |
 
 ---
 
