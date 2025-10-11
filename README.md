@@ -249,7 +249,9 @@ We use the **same testbench** (`tb_mythcore_test.v`), replacing the RTL design w
 ```bash
 iverilog -o /home/maddy/Desktop/open_source_tapout/VLSI/VSDBabySoC/output/post_synth_sim/post_synth_sim.out -DPOST_SYNTH_SIM -DFUNCTIONAL -DUNIT_DELAY=#1 -I /home/maddy/Desktop/open_source_tapout/VLSI/VSDBabySoC/src/include -I /home/maddy/Desktop/open_source_tapout/VLSI/VSDBabySoC/src/module /home/maddy/Desktop/open_source_tapout/VLSI/VSDBabySoC/src/module/testbench.v
 ```
-🔹 Post-Synthesis Simulation – Command Breakdown
+### 🔹 Post-Synthesis Simulation – Command Breakdown
+
+```bash
 iverilog \
   -o output/post_synth_sim/post_synth_sim.out \   # Output simulation executable
   -DPOST_SYNTH_SIM \                              # Enable POST_SYNTH_SIM mode
@@ -259,22 +261,17 @@ iverilog \
   -I src/module \                                 # Include path for modules
   src/module/testbench.v                          # Top-level testbench
 
+```
 
-Explanation of Options:
+**Explanation of Options:**
 
-🔹 iverilog → Icarus Verilog compiler to convert Verilog into an executable.
-
-🔹 -o <path> → Output binary path for the simulation.
-
-🔹 -DPOST_SYNTH_SIM → Switch testbench to post-synthesis simulation mode.
-
-🔹 -DFUNCTIONAL → Use high-level behavioral models instead of gate timing.
-
-🔹 -DUNIT_DELAY=#1 → Assigns a unit delay of #1 for all gates.
-
-🔹 -I <include_path> → Add include directories for modules or headers.
-
-🔹 testbench.v → Specifies the testbench as the top-level simulation file.
+- 🔹 **`iverilog`** → Icarus Verilog compiler to convert Verilog into an executable.
+- 🔹 **`o <path>`** → Output binary path for the simulation.
+- 🔹 **`DPOST_SYNTH_SIM`** → Switch testbench to post-synthesis simulation mode.
+- 🔹 **`DFUNCTIONAL`** → Use high-level behavioral models instead of gate timing.
+- 🔹 **`DUNIT_DELAY=#1`** → Assigns a unit delay of `#1` for all gates.
+- 🔹 **`I <include_path>`** → Add include directories for modules or headers.
+- 🔹 **`testbench.v`** → Specifies the testbench as the top-level simulation file.
 
 ### 🔹 Run the Simulation
 
