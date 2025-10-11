@@ -43,7 +43,7 @@ The **main objectives** of GLS for BabySoC are:
 4. **Final Check Before PnR**
     - This is the **last chance** to catch functional/timing problems **before moving to Physical Design (PnR)**.
 
-![0.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/0.png)
+<p align="center"><img src="./ASSETS/0.png" width="700" alt="image 0"/></p>
 
 ---
 
@@ -106,7 +106,7 @@ This separation makes debugging and file tracking much easier.
 yosys
 ```
 
-![1.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/1.png)
+<p align="center"><img src="./ASSETS/2.png" width="700" alt="image 2"/></p>
 
 ---
 
@@ -133,7 +133,7 @@ yosys> read_liberty -lib src/lib/avsddac.lib
 yosys> read_liberty -lib src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 ```
 
-![3.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/3.png)
+<p align="center"><img src="./ASSETS/3.jpeg" width="700" alt="image 3"/></p>
 
 ---
 
@@ -143,21 +143,21 @@ yosys> read_liberty -lib src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 yosys> synth -top vsdbabysoc
 ```
 
-![4.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/4.png)
+<p align="center"><img src="./ASSETS/4.jpg" width="700" alt="image 4"/></p>
 
 ---
 
 ### 5️⃣Statistics of Yosys Synthesis
 
-![5.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/5.png)
+<p align="center"><img src="./ASSETS/5.png" width="700" alt="image 5"/></p>
 
-![6.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/6.png)
+<p align="center"><img src="./ASSETS/6.jpg" width="700" alt="image 6"/></p>
 
-![7.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/7.png)
+<p align="center"><img src="./ASSETS/7.gif" width="700" alt="image 7"/></p>
 
-![8.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/8.png)
+<p align="center"><img src="./ASSETS/8.jpeg" width="700" alt="image 8"/></p>
 
-![9.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/9.png)
+<p align="center"><img src="./ASSETS/9.jpeg" width="700" alt="image 9"/></p>
 
 ---
 
@@ -167,7 +167,7 @@ yosys> synth -top vsdbabysoc
 yosys> dfflibmap -liberty src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 ```
 
-![10.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/10.png)
+<p align="center"><img src="./ASSETS/10.jpg" width="700" alt="image 10"/></p>
 
 ---
 
@@ -178,9 +178,9 @@ yosys> opt
 yosys> abc -liberty src/lib/sky130_fd_sc_hd__tt_025C_1v80.lib -script +strash;scorr;ifraig;retime;{D};strash;dch,-f;map,-M,1,{D}
 ```
 
-![11.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/11.png)
+<p align="center"><img src="./ASSETS/11.png" width="700" alt="image 11"/></p>
 
-![12.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/12.png)
+<p align="center"><img src="./ASSETS/12.jpg" width="700" alt="image 12"/></p>
 
 ---
 
@@ -193,7 +193,7 @@ yosys> clean -purge
 yosys> rename -enumerate
 ```
 
-![13.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/13.png)
+<p align="center"><img src="./ASSETS/13.gif" width="700" alt="image 13"/></p>
 
 ---
 
@@ -203,7 +203,7 @@ yosys> rename -enumerate
 yosys> stat
 ```
 
-![14.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/14.png)
+<p align="center"><img src="./ASSETS/14.png" width="700" alt="image 14"/></p>
 
 ---
 
@@ -213,7 +213,7 @@ yosys> stat
 yosys> write_verilog -noattr output/post_synth_sim/vsdbabysoc.synth.v
 ```
 
-![15.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/15.png)
+<p align="center"><img src="./ASSETS/15.jpg" width="700" alt="image 15"/></p>
 
 ✅ **Output:** `synth_netlist.v` – the synthesized gate-level version of our BabySoC core.
 
@@ -221,7 +221,7 @@ yosys> write_verilog -noattr output/post_synth_sim/vsdbabysoc.synth.v
 yosys> cd output/post_synth_sim/
 ```
 
-![16.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/16.png)
+<p align="center"><img src="./ASSETS/16.png" width="700" alt="image 16"/></p>
 
 ---
 
@@ -282,7 +282,7 @@ cd output/post_synth_sim
 
 This will produce a new `.vcd` file (waveform dump).
 
-![17.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/17.png)
+<p align="center"><img src="./ASSETS/17.png" width="700" alt="image 17"/></p>
 
 ### 🔹 Visualize the Waveform by GTKwave
 
@@ -292,7 +292,7 @@ gtkwave tb_mythcore_test_post.vcd
 
 Observe signal transitions, clock gating, and output behavior.
 
-![18.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/18.png)
+<p align="center"><img src="./ASSETS/18.png" width="700" alt="image 18"/></p>
 
 ---
 
@@ -333,11 +333,11 @@ Why because the matching outputs between pre- and post-synthesis simulations mea
 
 📌  Pre-Synthesis output
 
-![19.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/19.png)
+<p align="center"><img src="./ASSETS/19.jpg" width="700" alt="image 19"/></p>
 
 📌 Post-Synthesis output
 
-![20.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/20.png)
+<p align="center"><img src="./ASSETS/20.png" width="700" alt="image 20"/></p>
 
 </details>
 
@@ -368,7 +368,7 @@ STA is *static* because it analyzes the circuit without applying input vectors. 
 
 In a CMOS digital design flow, STA can be performed at multiple implementation stages.
 
-![49.png](tyh%202895f99c9dcb80deb9e9feb8864f4fdf/49.png)
+<p align="center"><img src="./ASSETS/49.png" width="700" alt="image 49"/></p>
 
 ---
 
@@ -411,7 +411,7 @@ Timing exceptions refine analysis for realistic circuit behavior:
 - `set_multicycle_path` — Allows multi-cycle operations
 - `set_max_delay` / `set_min_delay` — Defines custom timing limits
     
-    ![50.png](tyh%202895f99c9dcb80deb9e9feb8864f4fdf/50.png)
+<p align="center"><img src="./ASSETS/50.png" width="700" alt="image 50"/></p>
     
 
 ---
@@ -472,7 +472,7 @@ STA analyzes timing paths to evaluate delays, setup, and hold requirements.
 3. Register → Output (reg2out)
 4. Input → Output (in2out)
     
-    ![51.png](tyh%202895f99c9dcb80deb9e9feb8864f4fdf/51.png)
+<p align="center"><img src="./ASSETS/51.png" width="700" alt="image 51"/></p>
     
 
 ---
@@ -491,7 +491,7 @@ STA analyzes timing paths to evaluate delays, setup, and hold requirements.
     
     Violations can cause metastability or data corruption.
     
-    ![52.png](tyh%202895f99c9dcb80deb9e9feb8864f4fdf/52.png)
+<p align="center"><img src="./ASSETS/52.png" width="700" alt="image 52"/></p>
     
 
 ---
@@ -515,7 +515,7 @@ Slack measures how close a design is to meeting timing requirements.
 - Zero slack → Critical timing condition.
 - Negative slack → Timing violation.
     
-    ![53.png](tyh%202895f99c9dcb80deb9e9feb8864f4fdf/53.png)
+<p align="center"><img src="./ASSETS/53.png" width="700" alt="image 53"/></p>
     
 
 ---
@@ -572,7 +572,7 @@ VSDBabySoC/
 
 This separation makes debugging and file tracking much easier.
 
-![21.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/21.png)
+<p align="center"><img src="./ASSETS/21.jpg" width="700" alt="image 21"/></p>
 
 ---
 
@@ -587,7 +587,7 @@ git clone https://github.com/parallaxsw/OpenSTA.git
 cd OpenSTA
 ```
 
-![22.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/22.png)
+<p align="center"><img src="./ASSETS/22.jpeg" width="700" alt="image 22"/></p>
 
 **Step 2: Build the Docker Image**
 
@@ -597,11 +597,11 @@ docker build --file Dockerfile.ubuntu22.04 --tag opensta .
 
 This builds a Docker image named opensta using the provided Ubuntu 22.04 Dockerfile. All dependencies are installed during this step.
 
-![23.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/23.png)
+<p align="center"><img src="./ASSETS/23.jpg" width="700" alt="image 23"/></p>
 
-![24.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/24.png)
+<p align="center"><img src="./ASSETS/24.png" width="700" alt="image 24"/></p>
 
-![25.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/25.png)
+<p align="center"><img src="./ASSETS/25.png" width="700" alt="image 25"/></p>
 
 **Step 3: Run the OpenSTA Container**
 
@@ -611,7 +611,7 @@ To run a docker container using the OpenSTA image, use the -v option to docker t
 docker run -i -v $HOME:/data opensta
 ```
 
-![26.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/26.png)
+<p align="center"><img src="./ASSETS/26.png" width="700" alt="image 26"/></p>
 
 You now have OpenSTA installed and running inside a Docker container. After successful installation, you will see the % prompt—this indicates that the OpenSTA interactive shell is ready for use.
 
@@ -641,17 +641,17 @@ report_checks
 
 *This flow is useful for quick testing and debugging without writing a full TCL script.*
 
-![27.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/27.png)
+<p align="center"><img src="./ASSETS/27.png" width="700" alt="image 27"/></p>
 
 **Note:** We used report_checks here because only the slow liberty file (nangate45_slow.lib.gz) is loaded.
 
-![28.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/28.png)
+<p align="center"><img src="./ASSETS/28.png" width="700" alt="image 28"/></p>
 
-![29.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/29.png)
+<p align="center"><img src="./ASSETS/29.png" width="700" alt="image 29"/></p>
 
-![30.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/30.png)
+<p align="center"><img src="./ASSETS/30.png" width="700" alt="image 30"/></p>
 
-![31.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/31.png)
+<p align="center"><img src="./ASSETS/31.png" width="700" alt="image 31"/></p>
 
 This represents a setup (max delay) corner, so the analysis focuses on setup timing by default.
 
@@ -667,7 +667,7 @@ OpenSTA interprets report_checks without arguments as:
 report_checks -path_delay max
 ```
 
-![32.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/32.png)
+<p align="center"><img src="./ASSETS/32.png" width="700" alt="image 32"/></p>
 
 This reports only max path delays, i.e., setup timing checks.
 
@@ -679,7 +679,7 @@ If you want both setup and hold timing checks (i.e., both max and min path delay
 report_checks -path_delay min
 ```
 
-![33.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/33.png)
+<p align="center"><img src="./ASSETS/33.png" width="700" alt="image 33"/></p>
 
 **Analyzing report outcomes**
 
@@ -709,11 +709,11 @@ yosys> read_liberty -lib nangate45_slow.lib
 
 - you will possible face this error like this
 
-![34.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/34.png)
+<p align="center"><img src="./ASSETS/34.png" width="700" alt="image 34"/></p>
 
 - because the files are in ```gz```
 
-![35.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/35.png)
+<p align="center"><img src="./ASSETS/35.png" width="700" alt="image 35"/></p>
 
 - follow the commands
 
@@ -721,7 +721,7 @@ yosys> read_liberty -lib nangate45_slow.lib
 gunzip nangate45_slow.lib.gz
 ```
 
-![36.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/36.png)
+<p align="center"><img src="./ASSETS/36.png" width="700" alt="image 36"/></p>
 
 ---
 
@@ -732,15 +732,15 @@ yosys> read_verilog example1.v
 yosys> synth -top top
 ```
 
-![37.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/37.png)
+<p align="center"><img src="./ASSETS/37.png" width="700" alt="image 37"/></p>
 
-[https://www.notion.so](https://www.notion.so)
+<p align="center"><img src="./ASSETS/38.png" width="700" alt="image 38"/></p>
 
 ```bash
 yosys> show
 ```
 
-![39.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/39.png)
+<p align="center"><img src="./ASSETS/39.png" width="700" alt="image 39"/></p>
 
 ---
 
@@ -766,9 +766,9 @@ set_input_delay -clock clk 0 {in1 in2}
 report_checks
 ```
 
-![40.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/40.png)
+<p align="center"><img src="./ASSETS/40.png" width="700" alt="image 40"/></p>
 
-![41.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/41.png)
+<p align="center"><img src="./ASSETS/41.png" width="700" alt="image 41"/></p>
 
 ---
 
@@ -782,9 +782,9 @@ Reports timing paths with 4-digit precision and shows the net capacitance at eac
 
 Report timing with capacitance, slew, input pins, and fanout per stage.
 
-![42.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/42.png)
+<p align="center"><img src="./ASSETS/42.png" width="700" alt="image 42"/></p>
 
-![43.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/43.png)
+<p align="center"><img src="./ASSETS/43.png" width="700" alt="image 43"/></p>
 
 ---
 
@@ -1060,17 +1060,17 @@ Metrics such as Worst Hold Slack, Worst Setup Slack, WNS, and TNS were extracted
 
 ---
 
-![44.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/44.png)
+<p align="center"><img src="./ASSETS/44.png" width="700" alt="image 44"/></p>
 
-![45.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/45.png)
+<p align="center"><img src="./ASSETS/45.png" width="700" alt="image 45"/></p>
 
-![46.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/46.png)
+<p align="center"><img src="./ASSETS/46.png" width="700" alt="image 46"/></p>
 
-![47.jpg](week3%202805f99c9dcb80e48e4ee8a3457c6f65/47.jpg)
+<p align="center"><img src="./ASSETS/47.png" width="700" alt="image 47"/></p>
 
 ### 📌 combined view
 
-![48.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/48.png)
+<p align="center"><img src="./ASSETS/48.png" width="700" alt="image 48"/></p>
 
 </details>
 
