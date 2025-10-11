@@ -114,7 +114,7 @@ yosys
 
 ```bash
 ```
-# Load RTL files
+### Load RTL files
 yosys> read_verilog src/module/vsdbabysoc.v
 yosys> read_verilog -I src/include src/module/rvmyth.v
 yosys> read_verilog -I src/include src/module/clk_gate.v
