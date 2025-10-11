@@ -8,7 +8,13 @@
 
 # 🚀 Week 3 —  Post Synthesis GLS & STA Fundamentals
 
-🌟 
+🌟 This is **Week 3** of the **VSD RISC-V SoC Tapeout Program** —
+
+I explored **post-synthesis gate-level simulation**, understood **timing closure**,
+
+and performed **Static Timing Analysis (STA)** using **OpenSTA** 🧠
+
+to ensure our VSDBabySoC meets both **functional** and **timing requirements** after synthesis.
 
 </div>
 
@@ -1073,6 +1079,108 @@ Metrics such as Worst Hold Slack, Worst Setup Slack, WNS, and TNS were extracted
 <p align="center"><img src="./ASSETS/48.png" width="700" alt="image 48"/></p>
 
 </details>
+---
 
+## 📒 Key Learnings — Week 3
+
+### 🔧 Post-Synthesis Simulation (GLS)
+
+---
+
+### **📌 Gate-Level Simulation Setup**
+
+- Used synthesized netlist `vsdbabysoc.synth.v` generated via **Yosys**
+- Linked with timing libraries:
+    
+    ✅ `sky130_fd_sc_hd__tt_025C_1v80.lib`
+    
+    ✅ `avsdpll.lib`, `avsddac.lib`
+    
+- Compiled using:
+    
+    ```bash
+    iverilog -o output/post_synth_sim/post_synth_sim.out \
+      -DPOST_SYNTH_SIM -DFUNCTIONAL -DUNIT_DELAY=#1 \
+      -I src/include -I src/module src/module/testbench.v
+    
+    ```
+    
+- Executed simulation → generated `post_synth_sim.vcd` for waveform check
+
+🧩 **Purpose:** Validate that functionality remains identical to pre-synth RTL.
+
+---
+
+### **📌 Waveform Verification**
+
+- Compared `pre_synth_sim.vcd` vs `post_synth_sim.vcd` in GTKWave
+- Observed identical output logic — ✅ synthesis preserved design behavior
+- Small timing shifts visible due to unit delays applied to gates
+
+💡 **Insight:** GLS bridges logical design with physical realism before layout.
+
+---
+
+### 🧠 Static Timing Analysis (STA) with OpenSTA
+
+---
+
+### **📌 Why STA?**
+
+- Simulation is vector-based and limited to tested scenarios
+- **STA analyzes all paths mathematically**, independent of input patterns
+- Detects worst-case timing violations ( setup/hold ) across the entire SoC
+
+🕒 **Goal:** Ensure every path meets clock period and skew requirements.
+
+---
+
+### **📌 OpenSTA Overview**
+
+- Open-source timing analyzer with TCL interface
+- Reads `.v`, `.lib`, `.sdc`, and optional `.spef / .sdf`
+- Reports slack, critical paths, and clock latency
+- Integrates easily into Sky130-based flows
+
+---
+
+### 🧩 Tools in Action
+
+✔ **Yosys** — Logic synthesis
+
+✔ **Icarus Verilog** — Functional and gate-level simulation
+
+✔ **GTKWave** — Waveform visualization
+
+✔ **OpenSTA** — Timing verification
+
+✔ **Sky130 Libs** — Realistic delay modeling
+
+---
+
+> 💡 “Week 3 was all about timing — bridging logical correctness with real-world physics.
+> 
+> 
+> From post-synth GLS to STA reports, every signal was put under a stopwatch to ensure our BabySoC can tick reliably at silicon speed.” 🚀
+> 
+
+---
+
+---
+
+## 🙏 Special Thanks 👏
+
+I sincerely thank all the organizations and their key members for making this program possible 💡:
+
+- 🧑‍🏫 **VLSI System Design (VSD)** – [Kunal Ghosh](https://www.linkedin.com/in/kunal-ghosh-vlsisystemdesign-com-28084836/) for mentorship and vision.
+- 🤝 **Efabless** – [Michael Wishart](https://www.linkedin.com/in/mike-wishart-81480612/) & [Mohamed Kassem](https://www.linkedin.com/in/mkkassem/) for enabling collaborative open-source chip design.
+- 🏭 [**Semiconductor Laboratory (SCL)**](https://www.scl.gov.in/) – for PDK & foundry support.
+- 🎓 [**IIT Gandhinagar (IITGN)**](https://www.linkedin.com/school/indian-institute-of-technology-gandhinagar-iitgn-/?originalSubdomain=in) – for on-site training & project facilitation.
+- 🛠️ **Synopsys** – [Sassine Ghazi](https://www.linkedin.com/in/sassine-ghazi/) for providing industry-grade EDA tools under C2S program.
+
+---
+
+👉 Main Repo Link :  
+[https://github.com/madhavanshree2006/RISC-V-SoC-Tapeout-Program](https://github.com/madhavanshree2006/RISC-V-SoC-Tapeout-Program)
 
 
