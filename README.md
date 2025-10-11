@@ -1164,7 +1164,6 @@ Metrics such as Worst Hold Slack, Worst Setup Slack, WNS, and TNS were extracted
 > From post-synth GLS to STA reports, every signal was put under a stopwatch to ensure our BabySoC can tick reliably at silicon speed.” 🚀
 > 
 
----
 
 ---
 
