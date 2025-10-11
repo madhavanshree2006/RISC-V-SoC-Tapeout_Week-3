@@ -1066,7 +1066,7 @@ Metrics such as Worst Hold Slack, Worst Setup Slack, WNS, and TNS were extracted
 
 <p align="center"><img src="./ASSETS/46.png" width="700" alt="image 46"/></p>
 
-<p align="center"><img src="./ASSETS/47.png" width="700" alt="image 47"/></p>
+<p align="center"><img src="./ASSETS/47.jpg" width="700" alt="image 47"/></p>
 
 ### 📌 combined view
 
