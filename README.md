@@ -119,16 +119,11 @@ yosys
 ### 2️⃣ Read all verilog files
 
 ```bash
-```
 ### Load RTL files
 yosys> read_verilog src/module/vsdbabysoc.v
 yosys> read_verilog -I src/include src/module/rvmyth.v
 yosys> read_verilog -I src/include src/module/clk_gate.v
 ```
-
-![2.png](week3%202805f99c9dcb80e48e4ee8a3457c6f65/2.png)
-
----
 
 ### **3️⃣ Load the Liberty Files for Synthesis**
 
@@ -219,7 +214,7 @@ yosys> stat
 yosys> write_verilog -noattr output/post_synth_sim/vsdbabysoc.synth.v
 ```
 
-<p align="center"><img src="./ASSETS/15.pngg" width="700" alt="image 15"/></p>
+<p align="center"><img src="./ASSETS/15.png" width="700" alt="image 15"/></p>
 
 ✅ **Output:** `synth_netlist.v` – the synthesized gate-level version of our BabySoC core.
 
